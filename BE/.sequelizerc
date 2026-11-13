@@ -1,0 +1,9 @@
+// Rutas para sequelize-cli (la configuración ahora es config/config.js y lee el .env)
+const path = require('path');
+
+module.exports = {
+  config: path.resolve('config', 'config.js'),
+  'models-path': path.resolve('models'),
+  'seeders-path': path.resolve('seeders'),
+  'migrations-path': path.resolve('migrations'),
+};

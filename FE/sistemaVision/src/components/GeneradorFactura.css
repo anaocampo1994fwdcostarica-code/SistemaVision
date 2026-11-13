@@ -1,0 +1,221 @@
+/* Sección "Generar factura" (usa los tokens de la consola: --navy, --crimson, --line...) */
+.gen-contenedor {
+  max-width: 980px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.gen-header h2 {
+  margin: 0 0 4px;
+  color: var(--navy);
+  font-size: 1.5rem;
+}
+
+.gen-header p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  max-width: 70ch;
+}
+
+.gen-conversacion {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.gen-msg {
+  max-width: 85%;
+  padding: 9px 13px;
+  border-radius: 12px;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  white-space: pre-wrap;
+}
+
+.gen-user {
+  align-self: flex-end;
+  background: var(--navy);
+  color: #ffffff;
+}
+
+.gen-assistant {
+  align-self: flex-start;
+  background: var(--sand);
+  color: var(--ink);
+  border: 1px solid #efd79c;
+}
+
+.gen-pendiente {
+  padding: 9px 13px;
+  border-radius: 8px;
+  background: #fff8e8;
+  border: 1px solid #f2d393;
+  color: #8a4c00;
+  font-size: 0.88rem;
+}
+
+.gen-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.gen-label {
+  font-weight: 700;
+  color: var(--navy);
+  font-size: 0.9rem;
+}
+
+.gen-textarea {
+  width: 100%;
+  resize: vertical;
+  min-height: 96px;
+  padding: 10px 12px;
+  border: 1px solid #bfd0d8;
+  border-radius: 8px;
+  font: inherit;
+  color: var(--ink);
+  background: #ffffff;
+}
+
+.gen-textarea:focus {
+  outline: none;
+  border-color: var(--steel);
+  box-shadow: 0 0 0 3px rgba(97, 155, 184, 0.2);
+}
+
+.gen-acciones,
+.gen-botones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.gen-botones {
+  justify-content: flex-start;
+}
+
+.gen-btn,
+.gen-btn-secundario {
+  padding: 9px 18px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border: 1px solid transparent;
+}
+
+.gen-btn {
+  background: var(--crimson);
+  color: #ffffff;
+  box-shadow: 0 7px 16px rgba(190, 18, 38, 0.2);
+}
+
+.gen-btn:hover:not(:disabled) {
+  background: var(--maroon);
+}
+
+.gen-btn-secundario {
+  background: #ffffff;
+  color: var(--navy);
+  border-color: #bfd0d8;
+}
+
+.gen-btn-secundario:hover:not(:disabled) {
+  background: #f1f6f9;
+}
+
+.gen-btn:disabled,
+.gen-btn-secundario:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.gen-resumen {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.gen-supuestos {
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #eef6fa;
+  border: 1px solid #b9d7e6;
+  color: var(--ink);
+  font-size: 0.86rem;
+}
+
+.gen-supuestos ul {
+  margin: 4px 0 0;
+  padding-left: 1.2rem;
+}
+
+.gen-aviso {
+  margin: 0 0 6px;
+  color: #8a4c00;
+}
+
+.gen-prueba {
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gen-prueba.coincide {
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+}
+
+.gen-prueba.con-diferencias {
+  background: #fff1f2;
+  border: 1px solid #f4b7bd;
+}
+
+.gen-prueba table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+}
+
+.gen-prueba th,
+.gen-prueba td {
+  padding: 5px 8px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+
+.gen-prueba small {
+  color: var(--muted);
+}
+
+.gen-mono {
+  font-family: var(--mono);
+  word-break: break-all;
+}
+
+/* La factura mide 8.5 in: en pantallas angostas se desplaza en horizontal */
+.fi-contenedor {
+  overflow-x: auto;
+  padding: 18px;
+  border-radius: 10px;
+  background: #e9eef2;
+  border: 1px solid var(--line);
+}
+
+.gen-imagen-ia{display:grid;grid-template-columns:1fr 280px;gap:12px;align-items:start;padding:14px;background:#fff;border:1px solid var(--line);border-radius:10px}.gen-imagen-ia>div{display:flex;flex-direction:column;gap:4px;color:var(--navy);font-size:.9rem}.gen-imagen-ia small{color:var(--muted);font-size:.75rem}.gen-imagen-ia img{grid-column:2;grid-row:1 / span 2;width:100%;border:1px solid #d9e2e5;box-shadow:0 5px 14px rgba(4,34,56,.1)}.gen-imagen-ia a{justify-self:start;text-decoration:none}@media(max-width:700px){.gen-imagen-ia{grid-template-columns:1fr}.gen-imagen-ia img{grid-column:auto;grid-row:auto;max-width:360px}}

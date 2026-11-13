@@ -1,0 +1,443 @@
+/* ------------------------------------------------------------------
+ * Factura imprimible FWD Costa Rica — tamaño carta (8.5 × 11 in)
+ * Paleta del brand book: #0A6CB9 #662D91 #20BEC6 #FFCB05 #F7901E #E20613
+ * Tipografías: Figtree (cuerpo) y Barlow Condensed (títulos, sustituto de
+ * Mundial Narrow, que es de pago).
+ * Es un DOCUMENTO: colores fijos (no cambia con el modo oscuro).
+ * ------------------------------------------------------------------ */
+.fi {
+  --fwd-azul: #0a6cb9;
+  --fwd-azul-oscuro: #0b4f8a;
+  --fwd-morado: #662d91;
+  --fwd-turquesa: #20bec6;
+  --fwd-amarillo: #ffcb05;
+  --fwd-naranja: #f7901e;
+  --fwd-rojo: #e20613;
+  --fi-tinta: #1b2733;
+  --fi-borde: #c9d9ea;
+  --fi-fondo-caja: #eef4fb;
+
+  box-sizing: border-box;
+  width: 8.5in;
+  min-height: 11in;
+  margin: 0 auto;
+  padding: 0.32in 0.42in 0.3in;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: #ffffff;
+  color: var(--fi-tinta);
+  font-family: 'Figtree', system-ui, sans-serif;
+  font-size: 12.5px;
+  line-height: 1.35;
+  box-shadow: 0 10px 34px rgba(10, 40, 70, 0.16);
+}
+
+.fi *,
+.fi *::before,
+.fi *::after {
+  box-sizing: border-box;
+}
+
+.fi p,
+.fi h3,
+.fi h4,
+.fi dl,
+.fi dd {
+  margin: 0;
+}
+
+.fi-mono {
+  font-family: 'Consolas', 'SFMono-Regular', 'Menlo', monospace;
+}
+
+/* Franja de prueba */
+.fi-prueba {
+  padding: 6px 10px;
+  border: 2px dashed var(--fwd-rojo);
+  border-radius: 6px;
+  background: #fff1f2;
+  color: var(--fwd-rojo);
+  font-family: 'Barlow Condensed', 'Figtree', sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+
+/* Encabezado */
+.fi-encabezado {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.fi-logo {
+  /* Logo oficial tal cual; el blanco alrededor respeta su área de protección */
+  height: 88px;
+  width: auto;
+  display: block;
+}
+
+.fi-separador {
+  align-self: stretch;
+  width: 3px;
+  background: var(--fwd-azul);
+  border-radius: 2px;
+}
+
+.fi-eslogan {
+  font-family: 'Figtree', sans-serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 25px;
+  color: var(--fwd-azul);
+  letter-spacing: -0.01em;
+}
+
+.fi-rojo {
+  color: var(--fwd-rojo);
+}
+
+/* Filas */
+.fi-fila {
+  display: grid;
+  gap: 14px;
+}
+
+.fi-fila-emisor {
+  grid-template-columns: 1fr 1.08fr;
+  align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--fi-borde);
+}
+
+.fi-emisor {
+  padding-right: 12px;
+  border-right: 2px solid var(--fi-borde);
+}
+
+.fi-emisor h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #111a24;
+  margin-bottom: 3px;
+}
+
+.fi-emisor p {
+  font-size: 13px;
+}
+
+.fi-banda-tipo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 16px;
+  border-radius: 14px 26px 14px 14px;
+  background: linear-gradient(120deg, var(--fwd-azul) 0%, var(--fwd-azul-oscuro) 100%);
+  color: #ffffff;
+  box-shadow: inset -6px -6px 0 rgba(255, 203, 5, 0.9);
+}
+
+.fi-banda-tipo strong {
+  display: block;
+  font-family: 'Barlow Condensed', 'Figtree', sans-serif;
+  font-weight: 800;
+  font-size: 31px;
+  white-space: nowrap;
+  line-height: 1;
+  letter-spacing: 0.01em;
+}
+
+.fi-banda-tipo span {
+  display: block;
+  font-style: italic;
+  font-size: 18px;
+  text-align: center;
+}
+
+.fi-fila-datos {
+  grid-template-columns: 1fr 1fr;
+}
+
+.fi-caja {
+  padding: 10px 14px;
+  border: 1px solid var(--fi-borde);
+  border-radius: 12px;
+  background: var(--fi-fondo-caja);
+}
+
+.fi-datos {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 3px 12px;
+  align-content: center;
+}
+
+.fi-datos dt,
+.fi-clave span {
+  font-weight: 800;
+  color: var(--fwd-azul-oscuro);
+}
+
+.fi-clave {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+
+.fi-clave code {
+  font-family: 'Consolas', 'SFMono-Regular', 'Menlo', monospace;
+  font-size: 11.5px;
+  letter-spacing: 0.02em;
+  word-break: break-all;
+  color: #111a24;
+}
+
+/* Receptor */
+.fi-receptor {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 2px solid var(--fi-borde);
+  padding-bottom: 8px;
+}
+
+.fi-receptor-etiqueta {
+  flex: none;
+  padding: 9px 34px 9px 26px;
+  background: linear-gradient(90deg, var(--fwd-azul), var(--fwd-azul-oscuro));
+  color: #ffffff;
+  font-family: 'Barlow Condensed', 'Figtree', sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  /* Banda en diagonal */
+  clip-path: polygon(14px 0, 100% 0, calc(100% - 14px) 100%, 0 100%);
+}
+
+.fi-receptor strong {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+/* Tabla */
+.fi-tabla {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--fi-borde);
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 11.5px;
+}
+
+.fi-tabla th {
+  background: var(--fwd-azul);
+  color: #ffffff;
+  font-family: 'Barlow Condensed', 'Figtree', sans-serif;
+  font-weight: 700;
+  font-size: 13.5px;
+  padding: 7px 5px;
+  text-align: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.fi-tabla th:last-child,
+.fi-tabla td:last-child {
+  border-right: 0;
+}
+
+.fi-tabla td {
+  padding: 7px 5px;
+  border-top: 1px solid var(--fi-borde);
+  border-right: 1px solid var(--fi-borde);
+  text-align: center;
+  vertical-align: middle;
+}
+
+.fi-tabla td.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.fi-tabla td.fi-desc {
+  text-align: left;
+  min-width: 120px;
+}
+
+/* Desglose + totales */
+.fi-fila-totales {
+  grid-template-columns: 0.85fr 1.15fr;
+  align-items: start;
+}
+
+.fi-desglose {
+  border: 1px solid var(--fi-borde);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.fi-desglose h4 {
+  padding: 7px 14px;
+  background: var(--fwd-azul);
+  color: #ffffff;
+  font-family: 'Barlow Condensed', 'Figtree', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.fi-desglose p {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 6px 14px;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+
+.fi-totales {
+  padding-left: 16px;
+  border-left: 2px solid var(--fwd-azul);
+}
+
+.fi-totales div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 13.5px;
+}
+
+.fi-totales dd {
+  font-variant-numeric: tabular-nums;
+}
+
+.fi-totales .fi-fuerte dt {
+  font-weight: 800;
+}
+
+/* Total */
+.fi-total {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 24px;
+  border-radius: 14px;
+  background: linear-gradient(90deg, var(--fwd-azul) 0%, #23479a 55%, var(--fwd-morado) 100%);
+  color: #ffffff;
+}
+
+.fi-total-barra {
+  align-self: stretch;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.fi-total-etiqueta {
+  font-family: 'Barlow Condensed', 'Figtree', sans-serif;
+  font-weight: 800;
+  font-size: 30px;
+  letter-spacing: 0.01em;
+}
+
+.fi-total-valor {
+  margin-left: auto;
+  font-family: 'Barlow Condensed', 'Figtree', sans-serif;
+  font-weight: 800;
+  font-size: 38px;
+  font-variant-numeric: tabular-nums;
+}
+
+.fi-pago {
+  padding: 9px 14px;
+  border-radius: 10px;
+  background: var(--fi-fondo-caja);
+  text-align: center;
+  font-size: 14px;
+}
+
+.fi-pago b {
+  color: var(--fwd-azul-oscuro);
+}
+
+/* Pie */
+.fi-pie {
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid var(--fi-borde);
+  text-align: center;
+}
+
+.fi-pie p {
+  font-style: italic;
+  font-size: 12.5px;
+  margin-bottom: 10px;
+}
+
+.fi-pie-flechas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.fi-linea {
+  flex: 1;
+  max-width: 190px;
+  height: 2px;
+  background: var(--fwd-azul);
+}
+
+.fi-flechas {
+  flex: none;
+  display: block;
+}
+
+/* ------------------------------------------------------------------
+ * Impresión / PDF: solo la factura, carta, sin márgenes ni menús,
+ * con los colores exactos.
+ * ------------------------------------------------------------------ */
+@media print {
+  @page {
+    size: letter;
+    margin: 0;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+  }
+
+  .topbar,
+  .sidebar,
+  .no-print {
+    display: none !important;
+  }
+
+  .app-main {
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: 0 !important;
+    background: #ffffff !important;
+  }
+
+  .fi-contenedor {
+    overflow: visible !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: none !important;
+  }
+
+  .fi {
+    box-shadow: none !important;
+    margin: 0 !important;
+    break-inside: avoid;
+  }
+
+  .fi,
+  .fi * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}

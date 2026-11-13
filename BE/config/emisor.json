@@ -1,0 +1,17 @@
+{
+  "nombre": "FWD Costa Rica S.A.",
+  "nombre_comercial": "FWD Costa Rica",
+  "tipo_identificacion": "Jurídica",
+  "identificacion": "3101555555",
+  "codigo_actividad": "854901",
+  "ubicacion": {
+    "provincia": "San José",
+    "canton": "Montes de Oca",
+    "distrito": "San Pedro",
+    "barrio": null,
+    "otras_senas": null
+  },
+  "telefono": "2222-1111",
+  "correo": "facturacion@fwd.example.com",
+  "proveedor_sistemas": "3101555555"
+}
