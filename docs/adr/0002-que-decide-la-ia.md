@@ -2,7 +2,7 @@
 
 - Estado: Propuesto
 - Fecha: 2026-11-13
-- Decide: Aaron, desarrollador de SistemaVision
+- Decide: Ana Ocampo, desarrollador de SistemaVision
 
 ## Contexto
 
